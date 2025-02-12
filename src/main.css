@@ -1,0 +1,192 @@
+html {
+  height: 100vh; /* Full height of viewport */
+  width: 100%;
+  overflow: hidden; 
+}
+
+body {
+    margin: 0;
+}
+
+a:visited {
+  color: rgb(160, 2, 160);
+}
+
+#App {
+    display: flex;
+   /* flex-wrap: wrap; */
+    height: 100vh; /* Full height of viewport */
+    width: 100%;
+}
+   
+  #TV {
+
+    flex-shrink: 0; /* Prevents shrinking, and it also doesn't grow because that's the default,
+     and since flex-basis is auto by default, that means the entire time the size will be 
+     determined by width and height attributes, or the content size */
+     background-color: white;
+     
+  }
+
+  
+  #Controls label { 
+   transform: translate(14px, -3px) scale(0.75);
+  }
+
+
+  .static-noise {
+     
+     background-image: url('./images/static_noise.gif');
+     background-size: cover; 
+     background-position: center; 
+     background-repeat: no-repeat; 
+  }
+  
+  #TV img {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    object-fit: contain; /* Stretches and crops to fit wrapper */
+    z-index: 2;
+
+  }
+
+  #Controls {
+    flex-grow: 1; /* Takes up all remaining space. since flex-shrink is 1 by default, it'll shrink when space is lacking
+    leaving the TV always the same size */
+    background-color: #222; /* Just to visualize */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #Controls > * {
+    background-color: white;
+   /* margin: auto;  */
+  /*  max-width: 500px;  */ 
+    border-radius: 5px;
+    font-size: 1.1em;
+    width: 70%;
+  }
+  
+  #Christmas {  
+   font-family: Roboto, Helvetica, Arial, sans-serif;
+  
+  }
+  /*
+  #Christmas span {
+    margin-top: 5px;
+  }  */
+
+  #Go button {
+    height: 50px;
+  }
+
+#TVGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 4 / 3;
+  /*  
+  grid-template-rows: 22.75% 55.9% 21.35%;
+  grid-template-columns: 9.91% 56.41% 33.68%;
+  */
+  grid-template-rows: 19.05% 64% 16.95%;
+  grid-template-columns: 7.11% 61.71% 31.18%;
+  display: grid;
+}
+
+#Screen {
+  grid-area: 2 / 2 / 3 / 3;
+  background-image: url('https://image.tmdb.org/t/p/original/fNHCogWhABNAmzk0IFdzQP5XLYj.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#Screen span {
+  text-align: center;
+  display: inline;
+   background-color: black;  
+  color: white;
+  margin: 4% 5%;
+  animation: fadeIn;
+  animation-duration: 1s;
+}
+
+#ControlButtons {
+  grid-area: 2 / 3 / 3 / 4;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#ControlButtons img {
+  width: 70%;
+  height: auto;
+}
+
+
+
+#ControlButtons button {
+  z-index: 3;
+  background-color: rgb(16, 16, 16);
+}
+
+#AboutDialog .item {
+  background-color: #222;
+  color: white;
+}
+
+#AboutDialog p {
+  font-size: large;
+  font-weight: bold;
+}
+
+
+
+
+
+.screen-off {
+    background-color: #989898;
+}
+
+
+@media (orientation: landscape) {
+    #App {
+        flex-direction: row; 
+    }
+    #TV, #TVGrid {
+        height: 100vh;
+        width: auto;
+      }
+      #Title {
+        font-size: 5vh;
+      }
+      #Description {
+        font-size: 2.5vh;
+      }
+}
+
+@media (orientation: portrait) {
+    #App {
+        flex-direction: column; 
+    }
+    #TV, #TVGrid {
+        height: auto;
+        width: 100%;
+      }
+      #Title {
+        font-size: 5vw;
+      }
+      #Description {
+        font-size: 2.5vw;
+      }
+}
