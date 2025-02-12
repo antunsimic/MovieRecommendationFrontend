@@ -76,7 +76,7 @@ export default function About() {
           <Typography gutterBottom component="div">
           <p>Support this project</p> 
           <ul>
-            <li>GitHub</li>
+            <li><a href="https://github.com/antunsimic/movieRecommendationFrontend">GitHub</a></li>
             <li><a href="https://buymeacoffee.com/antunsimic">Buy me a coffee</a> </li>
           </ul>
           
