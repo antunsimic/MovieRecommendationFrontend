@@ -18,16 +18,15 @@ function checkChristmas(date) {
 }
 
 function Controls(props) {
-  const [isSmall, setIsSmall] = useState(false)
 
  // const isChristmasTime = checkChristmas(new Date(2024, 11, 25))
   const isChristmasTime = checkChristmas(new Date())
 
   return <div id="Controls" >
-    <Country country={props.country} setCountry={props.setCountry} setIsSmall={setIsSmall} prominence={props.prominence} setProminence={props.setProminence} />
-    <Prominence isSmall={isSmall} prominence={props.prominence} setProminence={props.setProminence}  />
+    <Country country={props.country} setCountry={props.setCountry} setIsSmall={props.setIsSmall} prominence={props.prominence} setProminence={props.setProminence} />
+    <Prominence isSmall={props.isSmall} prominence={props.prominence} setProminence={props.setProminence}  />
   { isChristmasTime &&  <Christmas christmas={props.christmas} setChristmas={props.setChristmas} /> }
-    <Go getMovie={props.getMovie} />
+    <Go getMovie={props.getMovie} country={props.country} prominence={props.prominence}  />
   </div>;
 }
 

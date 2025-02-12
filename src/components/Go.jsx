@@ -9,7 +9,7 @@ import '../main.css'
 function Go(props) {
   return  <Box sx={{ minWidth: 120 }} id="Go">
   <FormControl fullWidth>
-  <Button onClick={props.getMovie} color="error" variant="contained"> <PowerSettingsNewIcon />  </Button>
+  <Button onClick={() => {props.getMovie(props.country, props.prominence)}} color="error" variant="contained"> <PowerSettingsNewIcon />  </Button>
   </FormControl>
 </Box>
 

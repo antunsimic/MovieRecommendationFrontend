@@ -735,7 +735,7 @@ const all_countries = [
         "iso": "PK",
         "english_name": "Pakistan",
         "native_name": "Pakistan",
-        "population": 48
+        "population": 10
     },
     {
         "iso": "PS",
